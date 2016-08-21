@@ -1,0 +1,12 @@
+---
+  - name: install forever
+    npm: name=forever global=yes state=present
+
+  - name: check list of nodejs apps running
+    command: forever list
+    register: forever_list
+    changed_when: false
+
+  - name: start nodejs app
+    command: forever start /opt
+    when: forever_list.stdout.find('/opt') == -1
