@@ -4,10 +4,7 @@
   user: vagrant
   become: yes
 
-  tasks:
-    - include: process/nginx/main.yml
-    - include: process/nodejs/main.yml
-    - include: process/forever/main.yml
-
-  handlers:
-    - include: process/nginx/handlers/main.yml
+  roles:
+    - nginx
+    - nodejs
+    - forever

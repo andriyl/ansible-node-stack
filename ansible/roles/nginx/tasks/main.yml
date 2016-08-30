@@ -6,7 +6,7 @@
 
   - name: copy nginx.conf
     become: yes
-    template: src=process/nginx/templates/config.j2 dest=/etc/nginx/nginx.conf owner=root group=root
+    template: src=config.j2 dest=/etc/nginx/nginx.conf owner=root group=root
     tags: nginx
 
   - name: ensure default nginx has been deleted
